@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#51848f">
+    <title>Calculadora Impressão 3D</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Calculadora 3D</h1>
+    </header>
+
+    <main class="container">
+
+        <!-- IMPRESSÃO -->
+        <div class="card">
+            <h3>Impressão</h3>
+
+            <label>
+                Peso da peça
+                <div class="input-group">
+                    <input type="number" id="pesoPeca" placeholder="0">
+                    <span class="unit">g</span>
+                </div>
+            </label>
+
+            <label>
+                Tempo de impressão
+                <div class="tempo">
+                    <div class="input-group">
+                        <input type="number" id="horas" placeholder="0">
+                        <span class="unit">h</span>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="number" id="minutos" placeholder="0">
+                        <span class="unit">min</span>
+                    </div>
+                </div>
+            </label>
+        </div>
+
+        <!-- FILAMENTO -->
+        <div class="card">
+            <h3>Filamento</h3>
+
+            <label>
+                Preço do filamento (kg)
+                <div class="input-group">
+                    <span class="unit left">R$</span>
+                    <input type="number" id="precoKg">
+                    <span class="unit"></span>
+                </div>
+            </label>
+
+            <p class="badge">
+                Custo: R$ <span id="custoFilamento">0.00</span>
+            </p>
+        </div>
+
+        <!-- ENERGIA -->
+        <div class="card">
+            <h3>Energia</h3>
+
+            <label>
+                Potência da impressora
+                <div class="input-group">
+                    <input type="number" id="potencia">
+                    <span class="unit">w</span>
+                </div>
+            </label>
+
+            <label>
+                Preço do kWh
+                <div class="input-group">
+                    <span class="unit left">R$</span>
+                    <input type="number" id="precoKwh">
+                </div>
+            </label>
+
+            <p class="badge">
+                Custo: R$ <span id="custoEnergia">0.00</span>
+            </p>
+        </div>
+
+        <!-- CUSTOS ADICIONAIS -->
+        <div class="card">
+            <h3>Custos adicionais</h3>
+
+            <label>
+                Mão de obra
+                <div class="input-group">
+                    <span class="unit left">R$</span>
+                    <input type="number" id="maoObra">
+                </div>
+            </label>
+
+            <label>
+                Materiais e Ferragens
+                <div class="input-group">
+                    <span class="unit left">R$</span>
+                    <input type="number" id="materiais">
+                </div>
+            </label>
+
+            <label>
+                Embalagem
+                <div class="input-group">
+                    <span class="unit left">R$</span>
+                    <input type="number" id="embalagem">
+                </div>
+            </label>
+
+            <label>
+                Falhas e testes
+                <div class="input-group">
+                    <input type="number" id="falhas">
+                    <span class="unit">%</span>
+                </div>
+            </label>
+
+            <label>
+                Markup
+                <input type="number" id="markup" value="2">
+            </label>
+        </div>
+
+        <!-- RESUMO -->
+        <div class="card resumo">
+            <h3>Resumo</h3>
+
+            <div class="linha"><span>Filamento</span><span>R$ <strong id="r-filamento">0.00</strong></span></div>
+            <div class="linha"><span>Energia</span><span>R$ <strong id="r-energia">0.00</strong></span></div>
+            <div class="linha"><span>Mão de obra</span><span>R$ <strong id="r-maoobra">0.00</strong></span></div>
+            <div class="linha"><span>Materiais</span><span>R$ <strong id="r-materiais">0.00</strong></span></div>
+            <div class="linha"><span>Embalagem</span><span>R$ <strong id="r-embalagem">0.00</strong></span></div>
+            <div class="linha destaque"><span>Falhas</span><span>R$ <strong id="r-falhas">0.00</strong></span></div>
+
+            <hr>
+
+            <div class="linha total"><span>Custo total</span><span>R$ <strong id="r-custo-total">0.00</strong></span>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- PREÇO FINAL FIXO -->
+    <div class="preco-final">
+        Preço final: R$ <span id="r-preco-final">0.00</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
